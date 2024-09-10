@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simple Webpage</title>
+    <style>
+        .container {
+            text-align: center;
+            margin-top: 50px;
+        }
+        .search-bar {
+            width: 300px;
+            padding: 10px;
+        }
+        .go-button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        .title {
+            font-size: 24px;
+            margin-bottom: 20px;
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <div class="title">UPPCL Bill Demand Check (Developed By SHASHANK OJHA)</div>
+        <input type="text" id="searchBar" class="search-bar" placeholder="Enter Account Number...">
+        <button class="go-button" onclick="goToLink()">Go</button>
+    </div>
+
+    <script>
+        function goToLink() {
+            var accountNumber = document.getElementById('searchBar').value;
+            var baseUrl = "https://www.uppclonline.com/dispatch/Portal/BD?accNo=";
+            var fullUrl = baseUrl + accountNumber + "&dis=PUVNL";
+            window.location.href = fullUrl;
+        }
+    </script>
+</body>
+</html>
