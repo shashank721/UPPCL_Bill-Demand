@@ -4,36 +4,63 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>UPPCL_BD</title>
+    <!-- Adding Font Awesome for Icons -->
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css">
     <style>
         body {
+            font-family: 'Arial', sans-serif;
             transition: background-color 0.5s, color 0.5s;
+            margin: 0;
+            padding: 0;
         }
         .container {
             text-align: center;
             margin-top: 50px;
+            padding: 20px;
         }
         .search-bar {
-            width: 300px;
-            padding: 10px;
+            width: 80%;
+            max-width: 400px;
+            padding: 12px;
+            font-size: 16px;
+            border-radius: 8px;
+            border: 1px solid #ccc;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+            transition: all 0.3s ease;
+        }
+        .search-bar:focus {
+            outline: none;
+            border-color: #4CAF50;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
         }
         .go-button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             background-color: #4CAF50;
             color: white;
             border: none;
+            border-radius: 8px;
             cursor: pointer;
+            font-size: 16px;
+            margin-left: 10px;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .go-button:hover {
+            background-color: #45a049;
         }
         .title {
-            font-size: 24px;
-            margin-bottom: 20px;
+            font-size: 28px;
+            margin-bottom: 30px;
+            font-weight: bold;
+            color: #333;
         }
         .alert {
-            color: red;
+            color: #d9534f;
             margin-top: 20px;
             font-size: 16px;
         }
         .dark-mode {
-            background-color: #333;
+            background-color: #2c2c2c;
             color: white;
         }
         .dark-mode .go-button {
@@ -42,13 +69,60 @@
         .dark-mode .alert {
             color: #ff9999;
         }
+        .dark-mode .search-bar {
+            background-color: #444;
+            color: white;
+            border: 1px solid #777;
+        }
         .toggle-button {
-            padding: 10px 20px;
+            padding: 12px 24px;
             margin-top: 20px;
             background-color: #000;
             color: white;
             border: none;
+            border-radius: 8px;
             cursor: pointer;
+            transition: background-color 0.3s ease;
+            box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+        }
+        .toggle-button:hover {
+            background-color: #333;
+        }
+        .top-right-link {
+            position: absolute;
+            top: 10px;
+            right: 10px;
+        }
+        .top-right-link a {
+            color: #000;
+            text-decoration: none;
+            font-size: 24px;
+        }
+        .top-right-link a:hover {
+            color: #4CAF50;
+        }
+        .dark-mode .top-right-link a {
+            color: white;
+        }
+        .top-right-link i {
+            font-size: 24px;
+        }
+        /* Adding some padding for mobile view */
+        @media screen and (max-width: 600px) {
+            .container {
+                padding: 10px;
+            }
+            .title {
+                font-size: 22px;
+            }
+            .go-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
+            .toggle-button {
+                padding: 10px 20px;
+                font-size: 14px;
+            }
         }
     </style>
 </head>
@@ -59,6 +133,11 @@
         <button class="go-button" onclick="goToLink()">Go</button>
         <div class="alert"><b>Alert -</b> This website is only for UPPCL (PuVVNL) officials. Unofficial use can be punishable.</div>
         <button class="toggle-button" onclick="toggleDarkMode()">Go to Dark Mode</button>
+    </div>
+
+    <!-- Top right corner link with icon -->
+    <div class="top-right-link">
+        <a href="https://shashankojha.pages.dev/" target="_blank"><i class="fas fa-globe"></i></a>
     </div>
 
     <script>
@@ -75,51 +154,3 @@
     </script>
 </body>
 </html>
-
-<!-- <!DOCTYPE html>
-<html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>UPPCL_BD</title>
-    <style>
-        .container {
-            text-align: center;
-            margin-top: 50px;
-        }
-        .search-bar {
-            width: 300px;
-            padding: 10px;
-        }
-        .go-button {
-            padding: 10px 20px;
-            background-color: #4CAF50;
-            color: white;
-            border: none;
-            cursor: pointer;
-        }
-        .title {
-            font-size: 24px;
-            margin-bottom: 20px;
-        }
-    </style>
-</head>
-<body>
-    <div class="container">
-        <div class="title">UPPCL Bill Demand Check (Developed By SHASHANK OJHA)</div>
-        <input type="text" id="searchBar" class="search-bar" placeholder="Enter Account Number...">
-        <button class="go-button" onclick="goToLink()">Go</button>
-        <div class="alert"> <b>Alert -</b> This website is only for DUVVNL Officials. It can be punishable for Unofficial Use.</div>
-    </div>
-
-    <script>
-        function goToLink() {
-            var accountNumber = document.getElementById('searchBar').value;
-            var baseUrl = "https://www.uppclonline.com/dispatch/Portal/BD?accNo=";
-            var fullUrl = baseUrl + accountNumber + "&dis=PUVNL";
-            window.location.href = fullUrl;
-        }
-    </script>
-</body>
-</html>
- -->
